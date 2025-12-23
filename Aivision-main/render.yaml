@@ -1,0 +1,11 @@
+services:
+  - type: web                    # This is a web application (not a database or worker)
+    name: florafind              # Name shown in Render dashboard
+    runtime: node                # Use Node.js runtime
+    region: oregon               # Deploy to Oregon data center (closest to US West)
+    plan: free                   # Use free tier ($0/month)
+    buildCommand: npm install && npm run build   # Install dependencies & build Next.js
+    startCommand: npm start      # Start the production server
+    envVars:
+      - key: NODE_ENV
+        value: production        # Set environment to production mode
